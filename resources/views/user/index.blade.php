@@ -15,6 +15,7 @@
         <table class="table-auto w-full border-collapse border border-gray-300">
             <thead>
                 <tr>
+                    <th class="border px-4 py-2">id user</th>
                     <th class="border px-4 py-2">Name</th>
                     <th class="border px-4 py-2">Username</th>
                     <th class="border px-4 py-2">Level</th>
@@ -24,6 +25,7 @@
             <tbody>
                 @foreach($users as $user)
                     <tr>
+                    <td class="border px-4 py-2">{{ $user->id_user }}</td>
                         <td class="border px-4 py-2">{{ $user->nama }}</td>
                         <td class="border px-4 py-2">{{ $user->username }}</td>
                         <td class="border px-4 py-2">{{ $user->level }}</td>

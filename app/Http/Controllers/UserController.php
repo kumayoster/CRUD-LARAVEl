@@ -52,28 +52,22 @@ class UserController extends Controller
     }
 
     // Update method to update the user data in the database
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_user)
     {
-        // Validate the request data
-        $request->validate([
-            'nama' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:users,username,' . $id,
-            'password' => 'nullable|string|min:6|confirmed',
-            'level' => 'required|string|max:50',
-        ]);
-
-        // Find and update the user record
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($id_user); // Gunakan id_user
         $user->update([
             'nama' => $request->nama,
             'username' => $request->username,
-            'password' => $request->password ? bcrypt($request->password) : $user->password,
             'level' => $request->level,
         ]);
-
-        // Redirect to user index page with success message
-        return redirect()->route('user.index')->with('success', 'User successfully updated');
+    
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->password);
+        }
+    
+        return redirect()->route('user.index')->with('success', 'User updated successfully');
     }
+    
     // Destroy method to delete a user
     public function destroy($id)
     {
