@@ -7,7 +7,6 @@
   <div class="w-full flex justify-between items-center mb-5 pl-3">
       <div>
           <h3 class="text-xl font-semibold text-slate-800">Data Stock</h3>
-          <p class="text-slate-500">A list of all stock items.</p>
       </div>
       <!-- Add Stock Button -->
       <div class="ml-3">

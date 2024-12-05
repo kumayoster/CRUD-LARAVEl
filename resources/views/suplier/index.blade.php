@@ -6,8 +6,7 @@
   <!-- Header -->
   <div class="w-full flex justify-between items-center mb-5 pl-3">
       <div>
-          <h3 class="text-xl font-semibold text-slate-800">Data Users</h3>
-          <p class="text-slate-500">A list of all user accounts.</p>
+          <h3 class="text-xl font-semibold text-slate-800">Data Supplier</h3>
       </div>
       <!-- Search Bar -->
       <div class="ml-3">

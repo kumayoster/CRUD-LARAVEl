@@ -9,7 +9,7 @@ class barang extends Migration
     public function up()
     {
         Schema::create('barang', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_barang')->primary(); // Use unsignedBigInteger
+            $table->id('id_barang'); // Use unsignedBigInteger
             $table->string('nama_barang');
             $table->string('spesifikasi');
             $table->string('lokasi');

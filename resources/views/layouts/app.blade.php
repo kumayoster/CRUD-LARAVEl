@@ -36,7 +36,6 @@
                     <a href="{{ route('barangmasuk.index')  }}" class="text-sm font-semibold text-gray-900">Barang Masuk</a>
                     <a href="{{ route('barangkeluar.index')  }}" class="text-sm font-semibold text-gray-900">Barang Keluar</a>
                     <a href="{{ route('pinjam_barang.index')  }}" class="text-sm font-semibold text-gray-900">Pinjam Barang</a>
-                    <a href="#" class="text-sm font-semibold text-gray-900">Log in</a>
                 </div>
             </nav>
 
@@ -67,7 +66,6 @@
                                 <a href="{{ route('barangmasuk.index')  }}" class="text-base font-semibold text-gray-900 hover:bg-gray-50">Barang Masuk</a>
                                 <a href="{{ route('barangkeluar.index')  }}"  class="text-base font-semibold text-gray-900 hover:bg-gray-50">Barang Keluar</a>
                                 <a href="{{ route('pinjam_barang.index')  }}" class="text-base font-semibold text-gray-900 hover:bg-gray-50">Pinjam Barang</a>
-                                <a href="#" class="text-base font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
                             </div>
                         </div>
                     </div>

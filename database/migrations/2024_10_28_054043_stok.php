@@ -15,6 +15,7 @@ class stok extends Migration
             $table->integer('jml_keluar');
             $table->integer('total_barang');
             $table->timestamps();
+
         });
     }
 

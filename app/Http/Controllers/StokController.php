@@ -21,18 +21,19 @@ class StokController extends Controller
 
     public function store(Request $request)
     {
+        // Validate the input data
         $validated = $request->validate([
             'nama_barang' => 'required|string|max:255',
             'jml_masuk' => 'required|integer|min:0',
             'jml_keluar' => 'required|integer|min:0',
             'total_barang' => 'required|integer|min:0',
         ]);
-
-        // Create stock record
+    
+        // Create a new stock record
         $stok = Stok::create($validated);
-
+    
         // Create corresponding barang record
-        Barang::create([
+        \DB::table('barang')->insert([
             'id_barang' => $stok->id_barang, // Assuming 'id_barang' is auto-incremented in stok
             'nama_barang' => $validated['nama_barang'],
             'spesifikasi' => 'Default Spesifikasi', // Set a default value or accept input from the form
@@ -41,9 +42,10 @@ class StokController extends Controller
             'jumlah_barang' => $validated['total_barang'],
             'sumber_dana' => 'Default Sumber Dana', // Set a default value or accept input from the form
         ]);
-
+    
         return redirect()->route('stok.index')->with('success', 'Stock and Barang data added successfully.');
     }
+    
 
     public function edit($id)
     {
@@ -79,7 +81,7 @@ class StokController extends Controller
     public function destroy(Stok $stok)
     {
         // Delete the corresponding barang record
-        Barang::where('id_barang', $stok->id_barang)->delete();
+        Barang::where( 'id_barang', $stok->id_barang)->delete();
 
         // Delete stock record
         $stok->delete();
